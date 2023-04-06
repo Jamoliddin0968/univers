@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 MY_APPS = [
     'apps.institute',
     'apps.student',
+    'apps.skill',
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -13,3 +13,10 @@ class LessonTableBachelor(TemplateView):
     
 class Masters(TemplateView):
     template_name = "student/magistratura.html"
+    
+
+class LessonTableMasters(TemplateView):
+    template_name = "student/dars_jadvali_magistratura.html"
+    
+class CorrespondenceEducation(TemplateView):
+    template_name = "student/sirtqi_talim.html"
