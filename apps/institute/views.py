@@ -1,12 +1,15 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-# Create your views here.
+from django.views.generic import TemplateView,ListView,DetailView
+from .models import Post
 
 
-class Home(TemplateView):
+class Home(ListView):
+    queryset = Post.objects.all().order_by("-id")[:3]
     template_name = "index.html"
 
-
+class PostDetail(DetailView):
+    model=Post 
+    template_name = "institute/post_detail.html"
 
 class Faculty(TemplateView):
     template_name = "institute/fakultetlar.html"

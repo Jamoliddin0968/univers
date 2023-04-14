@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import Home,Faculty,Management,Cafedra,Center,About,StateSymbol,Dik,ITILPTK,Vacansy,Vacansycard,SiteMap
 
+from .views import (ITILPTK, About, Cafedra, Center, Dik, Faculty, Home,
+                    Management, SiteMap, StateSymbol, Vacansy, Vacansycard,PostDetail)
 
 urlpatterns = [
     path("",Home.as_view(),name="home"),
-    
+    path("post/<int:pk>/",PostDetail.as_view(),name='post_detail'),
     path('faculty/',Faculty.as_view(),name="faculty"),
     path('management/',Management.as_view(),name="management"),
     path('cafedra/',Cafedra.as_view(),name="cafedra"),
