@@ -23,6 +23,8 @@ urlpatterns = [
     path('',include("apps.institute.urls")),
     path('',include("apps.student.urls")),
     path('',include("apps.skill.urls")),
+    path('faculties/',include("apps.facultet.urls")),
+    path('departments/',include('apps.department.urls'))
      
 ]
 

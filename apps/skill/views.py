@@ -8,5 +8,3 @@ class OTMRating(TemplateView):
 class Demand(TemplateView):
     template_name = "skill/talablar.html"    
     
-class Dik(TemplateView):
-    template_name = 'dik.html'

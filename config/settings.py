@@ -34,6 +34,8 @@ MY_APPS = [
     'apps.institute',
     'apps.student',
     'apps.skill',
+    'apps.facultet',
+    'apps.department'
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',

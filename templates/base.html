@@ -91,7 +91,7 @@
                                             <li><a href={% url 'management' %}>Rahbariat</a></li>
                                             <li><a href={% url 'faculty' %}>Fakultetlar</a></li>
                                             <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
-                                            <li><a href={% url 'department' %}>Bo‘limlar</a></li>
+                                            <li><a href={% url 'departments' %}>Bo‘limlar</a></li>
                                             <li><a href={% url 'center' %}>Markazlar</a></li>
 
                                         </ul>
@@ -241,13 +241,13 @@
 
                         <div class="col-xs-4 col-lg-2">
                             <div class="widget">
-                                <h4 class="widget-title"><a href="saytxaritasi.html">Sayt Xaritasi</a></h4>
+                                <h4 class="widget-title"><a href={% url 'sitemap' %}>Sayt Xaritasi</a></h4>
                                 <ul>
                                     <li><a href={% url 'home' %}>Bosh sahifa</a></li>
                                     <li><a href={% url 'management' %}>Rahbariat</a></li>
                                     <li><a href={% url 'faculty' %}>Fakultetlar</a></li>
                                     <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
-                                    <li><a href={% url 'department' %}>Bo`limlar</a></li>
+                                    <li><a href={% url 'departments' %}>Bo`limlar</a></li>
                                     <li><a href={% url 'center' %}>Markazlar</a></li>
                                 </ul>
                             </div>
@@ -273,7 +273,7 @@
 
                                     <li><a href="http://mt.uzmmsi.uz/" target="_blank">masofaviy ta'lim</a></li>
                                     <li><a href={% url 'home' %}>Biz haqimizda</a></li>
-                                    <li><a href="vacansy.html">Vakansiya</a></li>
+                                    <li><a href={% url 'vacansy' %}>Vakansiya</a></li>
                                 </ul>
                             </div>
                         </div>
