@@ -27,6 +27,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('upload/', ckeditor_views.upload, name='ckeditor_upload'),
     path('browse/', ckeditor_views.browse, name='ckeditor_browse'),
+      path('grappelli/', include('grappelli.urls')), # grappelli URLS
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

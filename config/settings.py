@@ -40,7 +40,7 @@ LIBS = [
     'ckeditor_uploader',
 ]
 INSTALLED_APPS = [
-    # 'jazzmin',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
