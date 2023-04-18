@@ -26,30 +26,20 @@
             <div class="content">
                 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static 'images/home-3/deals/arm.png' %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="#">AXBOROT RESURS MARKAZI</a>
-								<p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href="#">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% for object in object_list %}
 					<div class="col-xs-12 col-sm-6">
                         <div class="item item-deal">
                             <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/RTT.png" %} alt="">
+                                <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="#">RAQAMLI TA'LIM TEXNOLOGIYALARI MARKAZI</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href="#">Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
 					
                 </div>
             </div>

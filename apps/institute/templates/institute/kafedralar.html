@@ -28,90 +28,20 @@
                 
                 <div class="row">
 					
-					<div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/uzmaqom.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'uzmtn' %}>“O‘zbek maqomi tarixi va nazariyasi” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'uzmtn' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% for object in object_list  %}
                     <div class="col-xs-12 col-sm-6">
                         <div class="item item-deal">
                             <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/vakalvacholgu.png" %} alt="">
+                                <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'vchipt' %}>“Vokal va cholg‘u ijrochiligi pedagoglari tayyorlash”kafedrasi</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'vchipt' %}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/maqomxonanda.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'mxk' %}>“Maqom xonandaligi” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'mxk' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/dostonijro.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'dik' %}>“Doston ijrochiligi” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'dik' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/maqomcholu.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'mchi' %}>“Maqom cholg`u ijrochiligi” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'mchi' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/uzatgf.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="kafedralar.html#">“O‘zbek adabiyoti, tillar va gumanitar fanlar” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href="http://uzmmsi.uz/uzatgf.png">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/kompazitorlik.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="kafedralar.html#">“KOMPOZITORLIK, BASTAKORLIK VA UMUMIY FORTEPIANO” KAFEDRASI</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href="http://uzmmsi.uz/#">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

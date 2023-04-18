@@ -602,7 +602,7 @@
       //Convert all the values into a comma delimited string
       var title = !this.multiple ? selectedItems[0] : selectedItems.join(this.options.multipleSeparator);
 
-      //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc..
+      //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc/static
       if (this.multiple && this.options.selectedTextFormat.indexOf('count') > -1) {
         var max = this.options.selectedTextFormat.split('>');
         if ((max.length > 1 && selectedItems.length > max[1]) || (max.length == 1 && selectedItems.length >= 2)) {
@@ -1519,7 +1519,7 @@
   // SELECTPICKER PLUGIN DEFINITION
   // ==============================
   function Plugin(option, event) {
-    // get the args of the outer function..
+    // get the args of the outer function/static
     var args = arguments;
     // The arguments of the function are explicitly re-defined from the argument list, because the shift causes them
     // to get lost/corrupted in android 2.3 and IE9 #715 #775

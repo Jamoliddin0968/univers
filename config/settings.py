@@ -32,16 +32,15 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 MY_APPS = [
     'apps.institute',
-    'apps.student',
     'apps.skill',
-    'apps.facultet',
-    'apps.department'
+    'apps.student',
 ]
 LIBS = [
     'ckeditor',
     'ckeditor_uploader',
 ]
 INSTALLED_APPS = [
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.student.context_processor.get_student_pages'
             ],
         },
     },
@@ -114,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz-uz'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -139,7 +139,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-
 # CKEDITOR_CONFIGS = {
 #     'default': {
 #         'skin': 'moono',

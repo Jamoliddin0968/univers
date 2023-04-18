@@ -57,8 +57,8 @@
                     <div class="header_right float-right">
 
                         <span class="login-register">
-                            <a href="http://uzmmsi.uz/login.html">Login</a>
-                            <a href="http://uzmmsi.uz/register.html">register</a>
+                            <a href="/static/login.html">Login</a>
+                            <a href="/static/register.html">register</a>
                         </span>
                         <div class="dropdown language">
                             <span>O'zbekcha</span>
@@ -89,7 +89,7 @@
                                         <a href="#">Tuzilma<span class="fa fa-caret-right"></span></a>
                                         <ul class="sub-menu">
                                             <li><a href={% url 'management' %}>Rahbariat</a></li>
-                                            <li><a href={% url 'faculty' %}>Fakultetlar</a></li>
+                                            <li><a href={% url 'fakultetlar' %}>Fakultetlar</a></li>
                                             <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
                                             <li><a href={% url 'departments' %}>Bo‘limlar</a></li>
                                             <li><a href={% url 'center' %}>Markazlar</a></li>
@@ -108,34 +108,20 @@
                             <li>
                                 <a href="#">Talabalar<span class="fa fa-caret-down"></span></a>
                                 <ul class="sub-menu">
+                                    {% for page in student_pages %}
                                     <li>
-                                        <a href={% url "examschedule" %}>Imtihonlar jadvali</a>
+                                        <a href={{page.get_absolute_url}}>{{page.title}}</a>
                                     </li>
-                                    <li>
-                                        <a href={% url 'bachelor' %}>Bakalavriyat</a>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'lesson_table_bachelor' %}>Dars jadvali «Bakalavr»</a>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'masters' %}>Magistratura</a>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'lesson_table_masters' %}>DARS JADVALI «MAGISTRATURA»</a>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'correspondence_education' %}>Sirtqi ta’lim</a>
-                                    </li>
-
+                                    {% endfor %}
                                 </ul>
                             </li>
                             <!-- <li><a href="#">Talabalar</a></li> -->
                             <li>
                                 <a href="#">Malaka talablari <span class="fa fa-caret-down"></span></a>
                                 <ul class="sub-menu">
-                                    <li><a href={% url 'otm_rating' %}>OTM REYTING</a></li>
-                                    <li><a href={% url 'demand' %}>Talablar</a></li>
-
+                                    {% for object in skills_page %}
+                                        <li><a href={{object.get_absolute_url}}>{{object.title}}</a></li>
+                                    {% endfor %}
                                     <li>
                                         <a href="#">Moliyaviy faoliyat<span
                                                 class="fa fa-caret-right"></span></a>
@@ -156,7 +142,7 @@
                                 </ul>
                             </li>
                             <li><a href="https://maqomfund.uz/" target="_blank">Maqom fondi</a></li>
-                            <li><a href="http://uzmmsi.uz/kutubxona.uzmmsi.uz" target="_blank">Kutubxona</a></li>
+                            <li><a href="/static/kutubxona.uzmmsi.uz" target="_blank">Kutubxona</a></li>
                             <li><a href="http://mt.uzmmsi.uz/" target="_blank">masofaviy ta'lim</a></li>
                         </ul>
                         <div class="shortcode-button">
@@ -226,7 +212,7 @@
                             <div class="widget widget_logo">
                                 <div class="widget-logo">
                                     <div class="img">
-                                        <a href={% url 'home' %}><img src="http://uzmmsi.uz/images/logo-footer.png" %}
+                                        <a href={% url 'home' %}><img src="/static/images/logo-footer.png" %}
                                                 alt=""></a>
                                     </div>
                                     <div class="text">
@@ -245,7 +231,7 @@
                                 <ul>
                                     <li><a href={% url 'home' %}>Bosh sahifa</a></li>
                                     <li><a href={% url 'management' %}>Rahbariat</a></li>
-                                    <li><a href={% url 'faculty' %}>Fakultetlar</a></li>
+                                    <li><a href={% url 'fakultetlar' %}>Fakultetlar</a></li>
                                     <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
                                     <li><a href={% url 'departments' %}>Bo`limlar</a></li>
                                     <li><a href={% url 'center' %}>Markazlar</a></li>

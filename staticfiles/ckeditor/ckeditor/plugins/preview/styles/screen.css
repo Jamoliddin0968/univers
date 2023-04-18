@@ -1,5 +1,5 @@
 div[style*="page-break-after"] {
-	background:url( ../images/pagebreak.gif ) no-repeat center center;
+	background:url( /static/images/pagebreak.gif ) no-repeat center center;
 	clear:both;
 	width:100%;
 	border-top:#999 1px dotted;

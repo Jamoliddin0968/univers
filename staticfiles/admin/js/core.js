@@ -1,7 +1,7 @@
 // Core JavaScript helper functions
 'use strict';
 
-// quickElement(tagType, parentReference [, textInChildNode, attribute, attributeValue ...]);
+// quickElement(tagType, parentReference [, textInChildNode, attribute, attributeValue /static.]);
 function quickElement() {
     const obj = document.createElement(arguments[0]);
     if (arguments[2]) {

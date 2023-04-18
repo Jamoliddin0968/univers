@@ -55,7 +55,7 @@
 
 /* mouse grab icon */
 .grabbing { 
-    cursor:url(http://uzmmsi.uz/css/lib/grabbing.png) 8 8, move;
+    cursor:url(/static/css/lib/grabbing.png) 8 8, move;
 }
 
 /* fix */

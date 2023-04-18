@@ -22,11 +22,9 @@ from ckeditor_uploader import views as ckeditor_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("apps.institute.urls")),
-    path('',include("apps.student.urls")),
+    path('student/',include("apps.student.urls")),
     path('',include("apps.skill.urls")),
-    path('faculties/',include("apps.facultet.urls")),
-    path('departments/',include('apps.department.urls')),
-     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('upload/', ckeditor_views.upload, name='ckeditor_upload'),
     path('browse/', ckeditor_views.browse, name='ckeditor_browse'),
 ]

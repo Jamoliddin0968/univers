@@ -92,8 +92,8 @@
                                 <p class="date f20">
                                     {{object.date}}
                                 </p>
-                                <a class="title font-monserat f20 mb20 block bold upper" href="O_Nazarbekov.html">{{object.title}}</a>
-                                <a class="more block f13" href="O_Nazarbekov.html">[BATAFSIL]</a>
+                                <a class="title font-monserat f20 mb20 block bold upper" href={{object.get_absolute_url}}>{{object.title}}</a>
+                                <a class="more block f13" href={{object.get_absolute_url}}>[BATAFSIL]</a>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                     
                 </div>
                 <div class="text-center">
-                    <a href="yangiliklar.html" class="awe-btn awe-btn-default font-hind f12 bold btn-medium mt15">Barcha yangliklar</a>
+                    <a href={% url 'posts' %} class="awe-btn awe-btn-default font-hind f12 bold btn-medium mt15">Barcha yangliklar</a>
                 </div>
             </div>
         </div>
@@ -120,34 +120,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                    {% for object in fakultetlar %}
+					<div class="col-xs-12 col-sm-6">
                         <div class="item item-deal">
                             <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/mmsf.png" %} alt="">
+                                <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'uzmms' %}>“O’ZBEK MILLIY
-                                    MUSIQA SAN’ATI” FAKULTETI</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href={% url 'uzmms' %}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/mmsf2.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="#">«Professional
-                                    ta’lim» fakulteti</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href="#">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                     <div class="row">
                         <div class="col col-xs-12 col-lg-6 col-lg-offset-3">
                             <div class="ot-heading row-20 mb30 text-center">
@@ -155,102 +141,20 @@
                             </div>
                         </div>
                     </div>
+                    {% for object in cafedras  %}
                     <div class="col-xs-12 col-sm-6">
                         <div class="item item-deal">
                             <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/uzmaqom.png" %} alt="">
+                                <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'uzmtn' %}>“O‘zbek maqomi
-                                    tarixi va nazariyasi” kafedrasi</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href={% url 'uzmtn' %}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/vakalvacholgu.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'vchipt' %}>“Vokal va cholg‘u
-                                    ijrochiligi pedagoglari tayyorlash”kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href={% url 'vchipt' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/dostonijro.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'dik' %}>“Doston ijrochiligi”
-                                    kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'dik' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/maqomxonanda.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'mxk' %}>“Maqom xonandaligi”
-                                    kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={% url 'mxk' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/maqomcholu.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={% url 'mchi' %}>“Maqom cholg`u
-                                    ijrochiligi” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href={% url 'mchi' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/uzadabiyot.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="index.html#">“O‘zbek adabiyoti,
-                                    tillar va gumanitar fanlar” kafedrasi</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href={% url 'uzatgf' %}>Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="item item-deal">
-                            <div class="img">
-                                <img class="img-full" src={% static "images/home-3/deals/kompazitorlik.png" %} alt="">
-                            </div>
-                            <div class="info">
-                                <a class="title bold f26 font-monserat upper" href="index.html#">“KOMPOZITORLIK,
-                                    BASTAKORLIK VA UMUMIY FORTEPIANO” KAFEDRASI</a>
-                                <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold"
-                                    href="#">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

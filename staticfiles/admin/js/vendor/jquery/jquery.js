@@ -1828,9 +1828,9 @@ Expr = Sizzle.selectors = {
 		"CHILD": function( match ) {
 
 			/* matches from matchExpr["CHILD"]
-				1 type (only|nth|...)
+				1 type (only|nth|/static.)
 				2 what (child|of-type)
-				3 argument (even|odd|\d*|\d*n([+-]\d+)?|...)
+				3 argument (even|odd|\d*|\d*n([+-]\d+)?|/static.)
 				4 xn-component of xn+y argument ([+-]?\d*n|)
 				5 sign of xn-component
 				6 x of xn-component
@@ -1992,12 +1992,12 @@ Expr = Sizzle.selectors = {
 
 						start = [ forward ? parent.firstChild : parent.lastChild ];
 
-						// non-xml :nth-child(...) stores cache data on `parent`
+						// non-xml :nth-child(/static.) stores cache data on `parent`
 						if ( forward && useCache ) {
 
 							// Seek `elem` from a previously-cached index
 
-							// ...in a gzip-friendly way
+							// /static.in a gzip-friendly way
 							node = parent;
 							outerCache = node[ expando ] || ( node[ expando ] = {} );
 
@@ -2028,7 +2028,7 @@ Expr = Sizzle.selectors = {
 							// Use previously-cached element index if available
 							if ( useCache ) {
 
-								// ...in a gzip-friendly way
+								// /static.in a gzip-friendly way
 								node = elem;
 								outerCache = node[ expando ] || ( node[ expando ] = {} );
 
@@ -2042,8 +2042,8 @@ Expr = Sizzle.selectors = {
 								diff = nodeIndex;
 							}
 
-							// xml :nth-child(...)
-							// or :nth-last-child(...) or :nth(-last)?-of-type(...)
+							// xml :nth-child(/static.)
+							// or :nth-last-child(/static.) or :nth(-last)?-of-type(/static.)
 							if ( diff === false ) {
 
 								// Use the same loop as above to seek `elem` from the start
@@ -2571,10 +2571,10 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 				// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
 				postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
 
-					// ...intermediate processing is necessary
+					// /static.intermediate processing is necessary
 					[] :
 
-					// ...otherwise use results directly
+					// /static.otherwise use results directly
 					results :
 				matcherIn;
 
@@ -3218,7 +3218,7 @@ var rootjQuery,
 							if ( isFunction( this[ match ] ) ) {
 								this[ match ]( context[ match ] );
 
-							// ...and otherwise set as attributes
+							// /static.and otherwise set as attributes
 							} else {
 								this.attr( match, context[ match ] );
 							}
@@ -3240,7 +3240,7 @@ var rootjQuery,
 					return this;
 				}
 
-			// HANDLE: $(expr, $(...))
+			// HANDLE: $(expr, $(/static.))
 			} else if ( !context || context.jquery ) {
 				return ( context || root ).find( selector );
 
@@ -3731,7 +3731,7 @@ jQuery.extend( {
 		var tuples = [
 
 				// action, add listener, callbacks,
-				// ... .then handlers, argument index, [final state]
+				// /static. .then handlers, argument index, [final state]
 				[ "notify", "progress", jQuery.Callbacks( "memory" ),
 					jQuery.Callbacks( "memory" ), 2 ],
 				[ "resolve", "done", jQuery.Callbacks( "once memory" ),
@@ -3834,7 +3834,7 @@ jQuery.extend( {
 										// Normal processors (resolve) also hook into progress
 										} else {
 
-											// ...and disregard older resolution values
+											// /static.and disregard older resolution values
 											maxDepth++;
 
 											then.call(
@@ -3912,7 +3912,7 @@ jQuery.extend( {
 
 					return jQuery.Deferred( function( newDefer ) {
 
-						// progress_handlers.add( ... )
+						// progress_handlers.add( /static. )
 						tuples[ 0 ][ 3 ].add(
 							resolve(
 								0,
@@ -3924,7 +3924,7 @@ jQuery.extend( {
 							)
 						);
 
-						// fulfilled_handlers.add( ... )
+						// fulfilled_handlers.add( /static. )
 						tuples[ 1 ][ 3 ].add(
 							resolve(
 								0,
@@ -3935,7 +3935,7 @@ jQuery.extend( {
 							)
 						);
 
-						// rejected_handlers.add( ... )
+						// rejected_handlers.add( /static. )
 						tuples[ 2 ][ 3 ].add(
 							resolve(
 								0,
@@ -3997,9 +3997,9 @@ jQuery.extend( {
 			// rejected_handlers.fire
 			list.add( tuple[ 3 ].fire );
 
-			// deferred.notify = function() { deferred.notifyWith(...) }
-			// deferred.resolve = function() { deferred.resolveWith(...) }
-			// deferred.reject = function() { deferred.rejectWith(...) }
+			// deferred.notify = function() { deferred.notifyWith(/static.) }
+			// deferred.resolve = function() { deferred.resolveWith(/static.) }
+			// deferred.reject = function() { deferred.rejectWith(/static.) }
 			deferred[ tuple[ 0 ] ] = function() {
 				deferred[ tuple[ 0 ] + "With" ]( this === deferred ? undefined : this, arguments );
 				return this;
@@ -4207,7 +4207,7 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 				fn.call( elems, value );
 				fn = null;
 
-			// ...except when executing function values
+			// /static.except when executing function values
 			} else {
 				bulk = fn;
 				fn = function( elem, _key, value ) {
@@ -4380,7 +4380,7 @@ Data.prototype = {
 			// Support array or space separated string of keys
 			if ( Array.isArray( key ) ) {
 
-				// If key is an array of keys...
+				// If key is an array of keys/static.
 				// We always set camelCase keys, so remove that.
 				key = key.map( camelCase );
 			} else {
@@ -4577,7 +4577,7 @@ jQuery.fn.extend( {
 				return;
 			}
 
-			// Set the data...
+			// Set the data/static.
 			this.each( function() {
 
 				// We always store the camelCased key
@@ -5500,7 +5500,7 @@ jQuery.event = {
 			// Suppress spec-violating clicks indicating a non-primary pointer button (trac-3861)
 			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-click
 			// Support: IE 11 only
-			// ...but not arrow key "clicks" of radio inputs, which can have `button` -1 (gh-2343)
+			// /static.but not arrow key "clicks" of radio inputs, which can have `button` -1 (gh-2343)
 			!( event.type === "click" && event.button >= 1 ) ) {
 
 			for ( ; cur !== this; cur = cur.parentNode || this ) {
@@ -5594,7 +5594,7 @@ jQuery.event = {
 				if ( rcheckableType.test( el.type ) &&
 					el.click && nodeName( el, "input" ) ) {
 
-					// dataPriv.set( el, "click", ... )
+					// dataPriv.set( el, "click", /static. )
 					leverageNative( el, "click", returnTrue );
 				}
 
@@ -5716,7 +5716,7 @@ function leverageNative( el, type, expectSync ) {
 			// Fire an inner synthetic event with the original arguments
 			} else if ( saved.length ) {
 
-				// ...and capture the result
+				// /static.and capture the result
 				dataPriv.set( this, type, {
 					value: jQuery.event.trigger(
 
@@ -5874,8 +5874,8 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 		setup: function() {
 
 			// Claim the first handler
-			// dataPriv.set( this, "focus", ... )
-			// dataPriv.set( this, "blur", ... )
+			// dataPriv.set( this, "focus", /static. )
+			// dataPriv.set( this, "blur", /static. )
 			leverageNative( this, type, expectSync );
 
 			// Return false to allow normal processing in the caller
@@ -10896,7 +10896,7 @@ jQuery.isNumeric = function( obj ) {
 	return ( type === "number" || type === "string" ) &&
 
 		// parseFloat NaNs numeric-cast false positives ("")
-		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
+		// /static.but misinterprets leading-number strings, particularly hex literals ("0x/static.")
 		// subtraction forces infinities to NaN
 		!isNaN( obj - parseFloat( obj ) );
 };

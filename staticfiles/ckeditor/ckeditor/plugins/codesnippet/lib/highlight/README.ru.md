@@ -20,7 +20,7 @@ Highlight.js нужен для подсветки синтаксиса в при
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
-Весь код на странице, обрамлённый в теги `<pre><code> .. </code></pre>`
+Весь код на странице, обрамлённый в теги `<pre><code> /static </code></pre>`
 будет автоматически подсвечен. Если вы используете другие теги или хотите
 подсвечивать блоки кода динамически, читайте "Инициализацию вручную" ниже.
 
@@ -44,7 +44,7 @@ Highlight.js можно использовать в node.js. Библиотек�
 
 Также её можно собрать из исходников с только теми языками, которые нужны:
 
-    python3 tools/build.py -tnode lang1 lang2 ..
+    python3 tools/build.py -tnode lang1 lang2 /static
 
 Использование библиотеки:
 
@@ -65,7 +65,7 @@ Highlight.js можно использовать с загрузчиком AMD-�
 нужно собрать из исходников следующей командой:
 
 ```bash
-$ python3 tools/build.py -tamd lang1 lang2 ..
+$ python3 tools/build.py -tamd lang1 lang2 /static
 ```
 
 Она создаст файл `build/highlight.pack.js`, который является загружаемым
@@ -92,7 +92,7 @@ require(["highlight.js/build/highlight.pack"], function(hljs){
 ```html
 <script type="text/javascript">
   hljs.configure({tabReplace: '    '}); // 4 spaces
-  // ... or
+  // /static. or
   hljs.configure({tabReplace: '<span class="indent">\t</span>'});
 
   hljs.initHighlightingOnLoad();
@@ -140,7 +140,7 @@ $('div.code').each(function(i, e) {hljs.highlightBlock(e)});
 его название в виде класса к элементу `<code>`:
 
 ```html
-<pre><code class="html">...</code></pre>
+<pre><code class="html">/static.</code></pre>
 ```
 
 Можно использовать рекомендованные в HTML5 названия классов:
@@ -150,7 +150,7 @@ $('div.code').each(function(i, e) {hljs.highlightBlock(e)});
 Чтобы запретить расцветку фрагмента вообще, используется класс "no-highlight":
 
 ```html
-<pre><code class="no-highlight">...</code></pre>
+<pre><code class="no-highlight">/static.</code></pre>
 ```
 
 

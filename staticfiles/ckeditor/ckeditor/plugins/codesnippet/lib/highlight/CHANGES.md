@@ -111,7 +111,7 @@ New languages:
 
 Improvements:
 
-- Ruby's got support for characters like `?A`, `?1`, `?\012` etc. and `%r{..}`
+- Ruby's got support for characters like `?A`, `?1`, `?\012` etc. and `%r{/static}`
   regexps.
 - Clojure now allows a function call in the beginning of s-expressions
   `(($filter "myCount") (arr 1 2 3 4 5))`.
@@ -222,7 +222,7 @@ Other notable changes:
 
 - Improvements to existing languages:
 
-    - interpreter prompt in Python (`>>>` and `...`)
+    - interpreter prompt in Python (`>>>` and `/static.`)
     - @-properties and classes in CoffeeScript
     - E4X in JavaScript (by [Oleg Efimov][oe])
     - new keywords in Perl (by [Kirk Kimmel][kk])
@@ -630,7 +630,7 @@ Other changes:
 - [MEL][] language from [Shuen-Huei Guan][drake]
 - whitespace now allowed between `<pre>` and `<code>`
 - better auto-detection of C++ and PHP
-- HTML allows embedded VBScript (`<% .. %>`)
+- HTML allows embedded VBScript (`<% /static %>`)
 
 [f]: http://softwaremaniacs.org/forum/highlightjs/
 [voldmar]: http://voldmar.ya.ru/
@@ -695,7 +695,7 @@ bugs in he [forum][f] and by email!
 There is also a new language — XML. A custom XML formerly was detected as HTML
 and didn't highlight custom tags. In this version I tried to make custom XML to
 be detected and highlighted by its own rules. Which by the way include such
-things as CDATA sections and processing instructions (`<? ... ?>`).
+things as CDATA sections and processing instructions (`<? /static. ?>`).
 
 [f]: http://softwaremaniacs.org/forum/viewforum.php?id=6
 
@@ -761,7 +761,7 @@ use it — replace it with the new one.
 Highlight.js is a parser, not just a couple of regular expressions. That said
 I'm glad to announce that in the new version 2.9 has support for:
 
-- in-string substitutions for Ruby -- `#{...}`
+- in-string substitutions for Ruby -- `#{/static.}`
 - strings from from numeric symbol codes (like #XX) for Delphi
 
 

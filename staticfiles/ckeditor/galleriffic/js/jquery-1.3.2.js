@@ -1034,7 +1034,7 @@ jQuery.extend({
 			return attr === null ? undefined : attr;
 		}
 
-		// elem is actually elem.style ... set the style
+		// elem is actually elem.style /static. set the style
 
 		// IE uses filters for opacity
 		if ( !jQuery.support.opacity && name == "opacity" ) {
@@ -2474,7 +2474,7 @@ jQuery.event = {
 		handle.elem = elem;
 
 		// Handle multiple events separated by a space
-		// jQuery(...).bind("mouseover mouseout", fn);
+		// jQuery(/static.).bind("mouseover mouseout", fn);
 		jQuery.each(types.split(/\s+/), function(index, type) {
 			// Namespaced event handlers
 			var namespaces = type.split(".");
@@ -2538,7 +2538,7 @@ jQuery.event = {
 				}
 
 				// Handle multiple events seperated by a space
-				// jQuery(...).unbind("mouseover mouseout", fn);
+				// jQuery(/static.).unbind("mouseover mouseout", fn);
 				jQuery.each(types.split(/\s+/), function(index, type){
 					// Namespaced event handlers
 					var namespaces = type.split(".");

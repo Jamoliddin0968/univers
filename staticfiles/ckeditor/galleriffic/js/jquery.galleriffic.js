@@ -88,13 +88,13 @@
 		autoStart:                 false,
 		syncTransitions:           false,
 		defaultTransitionDuration: 1000,
-		onSlideChange:             undefined, // accepts a delegate like such: function(prevIndex, nextIndex) { ... }
-		onTransitionOut:           undefined, // accepts a delegate like such: function(slide, caption, isSync, callback) { ... }
-		onTransitionIn:            undefined, // accepts a delegate like such: function(slide, caption, isSync) { ... }
-		onPageTransitionOut:       undefined, // accepts a delegate like such: function(callback) { ... }
-		onPageTransitionIn:        undefined, // accepts a delegate like such: function() { ... }
-		onImageAdded:              undefined, // accepts a delegate like such: function(imageData, $li) { ... }
-		onImageRemoved:            undefined  // accepts a delegate like such: function(imageData, $li) { ... }
+		onSlideChange:             undefined, // accepts a delegate like such: function(prevIndex, nextIndex) { /static. }
+		onTransitionOut:           undefined, // accepts a delegate like such: function(slide, caption, isSync, callback) { /static. }
+		onTransitionIn:            undefined, // accepts a delegate like such: function(slide, caption, isSync) { /static. }
+		onPageTransitionOut:       undefined, // accepts a delegate like such: function(callback) { /static. }
+		onPageTransitionIn:        undefined, // accepts a delegate like such: function() { /static. }
+		onImageAdded:              undefined, // accepts a delegate like such: function(imageData, $li) { /static. }
+		onImageRemoved:            undefined  // accepts a delegate like such: function(imageData, $li) { /static. }
 	};
 
 	// Primary Galleriffic initialization function that should be called on the thumbnail container.

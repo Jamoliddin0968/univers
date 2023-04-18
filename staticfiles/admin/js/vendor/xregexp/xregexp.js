@@ -109,7 +109,7 @@ module.exports = function(XRegExp) {
                 var sub = asXRegExp(subs[p], addFlagX);
                 data[p] = {
                     // Deanchoring allows embedding independently useful anchored regexes. If you
-                    // really need to keep your anchors, double them (i.e., `^^...$$`).
+                    // really need to keep your anchors, double them (i.e., `^^/static.$$`).
                     pattern: deanchor(sub.source),
                     names: sub[REGEX_DATA].captureNames || []
                 };
@@ -250,13 +250,13 @@ module.exports = function(XRegExp) {
      * // ]
      *
      * // Omitting unneeded parts with null valueNames, and using escapeChar
-     * str = '...{1}.\\{{function(x,y){return {y:x}}}';
+     * str = '/static.{1}.\\{{function(x,y){return {y:x}}}';
      * XRegExp.matchRecursive(str, '{', '}', 'g', {
      *   valueNames: ['literal', null, 'value', null],
      *   escapeChar: '\\'
      * });
      * // -> [
-     * // {name: 'literal', value: '...',  start: 0, end: 3},
+     * // {name: 'literal', value: '/static.',  start: 0, end: 3},
      * // {name: 'value',   value: '1',    start: 4, end: 5},
      * // {name: 'literal', value: '.\\{', start: 6, end: 9},
      * // {name: 'value',   value: 'function(x,y){return {y:x}}', start: 10, end: 37}
@@ -406,8 +406,8 @@ module.exports = function(XRegExp) {
 
     /**
      * Adds base support for Unicode matching:
-     * - Adds syntax `\p{..}` for matching Unicode tokens. Tokens can be inverted using `\P{..}` or
-     *   `\p{^..}`. Token names ignore case, spaces, hyphens, and underscores. You can omit the
+     * - Adds syntax `\p{/static}` for matching Unicode tokens. Tokens can be inverted using `\P{/static}` or
+     *   `\p{^/static}`. Token names ignore case, spaces, hyphens, and underscores. You can omit the
      *   braces for token names that are a single letter (e.g. `\pL` or `PL`).
      * - Adds flag A (astral), which enables 21-bit Unicode support.
      * - Adds the `XRegExp.addUnicodeData` method used by other addons to provide character data.
@@ -450,7 +450,7 @@ module.exports = function(XRegExp) {
 
         XRegExp.forEach(
             range,
-            /(\\x..|\\u....|\\?[\s\S])(?:-(\\x..|\\u....|\\?[\s\S]))?/,
+            /(\\x/static|\\u/static/static|\\?[\s\S])(?:-(\\x/static|\\u/static/static|\\?[\s\S]))?/,
             function(m) {
                 var start = charCode(m[1]);
                 if (start > (lastEnd + 1)) {
@@ -517,7 +517,7 @@ module.exports = function(XRegExp) {
     // ==--------------------------==
 
     /*
-     * Add astral mode (flag A) and Unicode token syntax: `\p{..}`, `\P{..}`, `\p{^..}`, `\pC`.
+     * Add astral mode (flag A) and Unicode token syntax: `\p{/static}`, `\P{/static}`, `\p{^/static}`, `\pC`.
      */
     XRegExp.addToken(
         // Use `*` instead of `+` to avoid capturing `^` as the token name in `\p{^}`
@@ -528,7 +528,7 @@ module.exports = function(XRegExp) {
             var ERR_UNKNOWN_REF = 'Unicode token missing data ';
             var ERR_ASTRAL_ONLY = 'Astral mode required for Unicode token ';
             var ERR_ASTRAL_IN_CLASS = 'Astral mode does not support Unicode tokens within character classes';
-            // Negated via \P{..} or \p{^..}
+            // Negated via \P{/static} or \p{^/static}
             var isNegated = match[1] === 'P' || !!match[2];
             // Switch from BMP (0-FFFF) to astral (0-10FFFF) mode via flag A
             var isAstralMode = flags.indexOf('A') > -1;
@@ -3888,7 +3888,7 @@ XRegExp.matchChain = function(str, chain) {
  *   Replacement functions are invoked with three or more arguments:
  *     - The matched substring (corresponds to $& above). Named backreferences are accessible as
  *       properties of this first argument.
- *     - 0..n arguments, one for each backreference (corresponding to $1, $2, etc. above).
+ *     - 0/staticn arguments, one for each backreference (corresponding to $1, $2, etc. above).
  *     - The zero-based index of the match within the total search string.
  *     - The total string being searched.
  * @param {String} [scope='one'] Use 'one' to replace the first match only, or 'all'. If not
@@ -4004,8 +4004,8 @@ XRegExp.replaceEach = function(str, replacements) {
  * // -> ['a', 'b']
  *
  * // Backreferences in result array
- * XRegExp.split('..word1..', /([a-z]+)(\d+)/i);
- * // -> ['..', 'word', '1', '..']
+ * XRegExp.split('/staticword1/static', /([a-z]+)(\d+)/i);
+ * // -> ['/static', 'word', '1', '/static']
  */
 XRegExp.split = function(str, separator, limit) {
     return fixed.split.call(toObject(str), separator, limit);
@@ -4354,7 +4354,7 @@ fixed.replace = function(search, replacement) {
                 // Else, numbered backreference without curly braces
                 $2 = +$2; // Type-convert; drop leading zero
                 // XRegExp behavior for `$n` and `$nn`:
-                // - Backrefs end after 1 or 2 digits. Use `${..}` for more digits.
+                // - Backrefs end after 1 or 2 digits. Use `${/static}` for more digits.
                 // - `$1` is an error if no capturing groups.
                 // - `$10` is an error if less than 10 capturing groups. Use `${1}0` instead.
                 // - `$01` is `$1` if at least one capturing group, else it's an error.
@@ -4470,11 +4470,11 @@ XRegExp.addToken(
 );
 
 /*
- * Unicode code point escape with curly braces: `\u{N..}`. `N..` is any one or more digit
+ * Unicode code point escape with curly braces: `\u{N/static}`. `N/static` is any one or more digit
  * hexadecimal number from 0-10FFFF, and can include leading zeros. Requires the native ES6 `u` flag
  * to support code points greater than U+FFFF. Avoids converting code points above U+FFFF to
  * surrogate pairs (which could be done without flag `u`), since that could lead to broken behavior
- * if you follow a `\u{N..}` token that references a code point above U+FFFF with a quantifier, or
+ * if you follow a `\u{N/static}` token that references a code point above U+FFFF with a quantifier, or
  * if you use the same in a character class.
  */
 XRegExp.addToken(

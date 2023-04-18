@@ -1,6 +1,6 @@
 @bender-tags: exportpdf, feature, 11
 @bender-ui: collapsed
-@bender-include: ../_helpers/tools.js
+@bender-include: /static/_helpers/tools.js
 @bender-ckeditor-plugins: wysiwygarea, toolbar, basicstyles, notification
 
 **Note:** At the beginning open the console.

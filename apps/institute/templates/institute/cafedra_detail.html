@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- SUB BANNER -->
+        <section class="section-sub-banner bg-9">
+            <div class="sub-banner">
+                <div class="container">
+                    <div class="text text-center">
+                        <h2 align="center">{{object.name}}</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END / SUB BANNER -->
+        
+        <!-- BLOG -->
+        <section class="section-blog bg-white">
+            <div class="container">
+                <div class="blog">
+                    <div class="row">
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="blog-content events-content">
+                                
+                                <!-- POST ITEM -->
+                                <article class="post">
+									
+                                    <div class="entry-media">
+                                        <a href="#" class="post-thumbnail hover-zoom"><img src={{object.image.url}} width="200" height="200" alt=""></a>
+									</div>
+										<div>
+                                            {{object.content | safe}}
+                                        </div>
+								</article>
+                                <!-- END / POST ITEM -->
+
+                            </div>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END / BLOG -->
+		
+{% endblock content %}

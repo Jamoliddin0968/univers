@@ -1,10 +1,8 @@
 from django.shortcuts import render
 
-from django.views.generic import TemplateView
+from django.views.generic import DetailView
+from .models import Page
 
-class OTMRating(TemplateView):
-    template_name = "skill/otmreyting.html"
-
-class Demand(TemplateView):
-    template_name = "skill/talablar.html"    
-    
+class PageDetail(DetailView):
+    template_name = "skill/page_detail.html"
+    model = Page

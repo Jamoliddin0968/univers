@@ -217,7 +217,7 @@
     font-family: 'Hind', sans-serif;
 }
 .section-check-availability.availability-style-2 .check-availability .availability-form .awe-select .dropdown-toggle span.caret {
-    background: url("../images/home-3/icon-dropdow.png") !important;
+    background: url("/static/images/home-3/icon-dropdow.png") !important;
     background-repeat: no-repeat;
     background-position: center center;
     height: 13px;
@@ -395,7 +395,7 @@
 /* ============================ HOME GUEST ============================ */
 
 .section-home-guestbook.home-guestbook-style-2.bg-22 {
-    background: url("http://uzmmsi.uz/images/home-3/bgr-guest-book.png");
+    background: url("/static/images/home-3/bgr-guest-book.png");
     background-position: 50% 50%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -417,7 +417,7 @@
 }
 .section-home-guestbook.home-guestbook-style-2 .home-guestbook .guestbook-item .text p:before {
     content: "";
-    background: url("../images/home-3/icon/before-testimonial.png");
+    background: url("/static/images/home-3/icon/before-testimonial.png");
     width: 30px;
     height: 19px;
     right: 0;
@@ -538,7 +538,7 @@
     position: relative;
 }
 .section-video.bg-23 {
-    background: url("http://uzmmsi.uz/images/home-3/bgr-video.png");
+    background: url("/static/images/home-3/bgr-video.png");
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -551,7 +551,7 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     transition: all .3s;
-    background: url("../images/home-3/icon/player-1.png");
+    background: url("/static/images/home-3/icon/player-1.png");
     width: 64px;
     height: 64px;
     background-repeat: no-repeat;
@@ -589,7 +589,7 @@
 .section-video:hover .btn-play {
     width: 70px;
     height: 70px;
-    background: url("../images/home-3/icon/player-2-1.png");
+    background: url("/static/images/home-3/icon/player-2-1.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 2;
@@ -610,7 +610,7 @@ footer.footer-style-2 a:hover {
 footer.footer-style-2 .footer_top {
     padding: 20px 40px !important;
     margin: 100px 0;
-    background: url(../images/home-3/footer/news.png) no-repeat !important;
+    background: url(/static/images/home-3/footer/news.png) no-repeat !important;
     position: relative;
     z-index: 2;
 }
@@ -676,7 +676,7 @@ footer.footer-style-3 .footer_top .ot-heading h2 {
     color: #fff;
 }
 footer .bgr-footer {
-    background: url(../images/home-3/footer/footer-center.png) no-repeat !important;
+    background: url(/static/images/home-3/footer/footer-center.png) no-repeat !important;
     background-size: cover !important;
     position: relative;
 }

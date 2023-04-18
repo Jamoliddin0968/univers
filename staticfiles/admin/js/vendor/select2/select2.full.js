@@ -111,13 +111,13 @@ var requirejs, require, define;
                 if (part === '.') {
                     name.splice(i, 1);
                     i -= 1;
-                } else if (part === '..') {
-                    // If at the start, or previous value is still ..,
+                } else if (part === '/static') {
+                    // If at the start, or previous value is still /static,
                     // keep them so that when converted to a path it may
                     // still work when converted to a path, even though
                     // as an ID it is less than ideal. In larger point
                     // releases, may be better to just kick out an error.
-                    if (i === 0 || (i === 1 && name[2] === '..') || name[i - 1] === '..') {
+                    if (i === 0 || (i === 1 && name[2] === '/static') || name[i - 1] === '/static') {
                         continue;
                     } else if (i > 0) {
                         name.splice(i - 1, 2);
@@ -390,7 +390,7 @@ var requirejs, require, define;
             //Just return the module wanted. In this scenario, the
             //deps arg is the module name, and second arg (if passed)
             //is just the relName.
-            //Normalize module name, if it contains . or ..
+            //Normalize module name, if it contains . or /static
             return callDep(makeMap(deps, makeRelParts(callback)).f);
         } else if (!deps.splice) {
             //deps is a config object, not an array.
@@ -1403,8 +1403,8 @@ S2.define('select2/keys',[
 
 S2.define('select2/selection/base',[
   'jquery',
-  '../utils',
-  '../keys'
+  '/static/utils',
+  '/static/keys'
 ], function ($, Utils, KEYS) {
   function BaseSelection ($element, options) {
     this.$element = $element;
@@ -1583,8 +1583,8 @@ S2.define('select2/selection/base',[
 S2.define('select2/selection/single',[
   'jquery',
   './base',
-  '../utils',
-  '../keys'
+  '/static/utils',
+  '/static/keys'
 ], function ($, BaseSelection, Utils, KEYS) {
   function SingleSelection () {
     SingleSelection.__super__.constructor.apply(this, arguments);
@@ -1691,7 +1691,7 @@ S2.define('select2/selection/single',[
 S2.define('select2/selection/multiple',[
   'jquery',
   './base',
-  '../utils'
+  '/static/utils'
 ], function ($, BaseSelection, Utils) {
   function MultipleSelection ($element, options) {
     MultipleSelection.__super__.constructor.apply(this, arguments);
@@ -1806,7 +1806,7 @@ S2.define('select2/selection/multiple',[
 });
 
 S2.define('select2/selection/placeholder',[
-  '../utils'
+  '/static/utils'
 ], function (Utils) {
   function Placeholder (decorated, $element, options) {
     this.placeholder = this.normalizePlaceholder(options.get('placeholder'));
@@ -1857,8 +1857,8 @@ S2.define('select2/selection/placeholder',[
 
 S2.define('select2/selection/allowClear',[
   'jquery',
-  '../keys',
-  '../utils'
+  '/static/keys',
+  '/static/utils'
 ], function ($, KEYS, Utils) {
   function AllowClear () { }
 
@@ -1971,8 +1971,8 @@ S2.define('select2/selection/allowClear',[
 
 S2.define('select2/selection/search',[
   'jquery',
-  '../utils',
-  '../keys'
+  '/static/utils',
+  '/static/keys'
 ], function ($, Utils, KEYS) {
   function Search (decorated, $element, options) {
     decorated.call(this, $element, options);
@@ -3144,7 +3144,7 @@ S2.define('select2/diacritics',[
 });
 
 S2.define('select2/data/base',[
-  '../utils'
+  '/static/utils'
 ], function (Utils) {
   function BaseAdapter ($element, options) {
     BaseAdapter.__super__.constructor.call(this);
@@ -3186,7 +3186,7 @@ S2.define('select2/data/base',[
 
 S2.define('select2/data/select',[
   './base',
-  '../utils',
+  '/static/utils',
   'jquery'
 ], function (BaseAdapter, Utils, $) {
   function SelectAdapter ($element, options) {
@@ -3472,7 +3472,7 @@ S2.define('select2/data/select',[
 
 S2.define('select2/data/array',[
   './select',
-  '../utils',
+  '/static/utils',
   'jquery'
 ], function (SelectAdapter, Utils, $) {
   function ArrayAdapter ($element, options) {
@@ -3556,7 +3556,7 @@ S2.define('select2/data/array',[
 
 S2.define('select2/data/ajax',[
   './array',
-  '../utils',
+  '/static/utils',
   'jquery'
 ], function (ArrayAdapter, Utils, $) {
   function AjaxAdapter ($element, options) {
@@ -4072,7 +4072,7 @@ S2.define('select2/dropdown',[
 
 S2.define('select2/dropdown/search',[
   'jquery',
-  '../utils'
+  '/static/utils'
 ], function ($, Utils) {
   function Search () { }
 
@@ -4324,7 +4324,7 @@ S2.define('select2/dropdown/infiniteScroll',[
 
 S2.define('select2/dropdown/attachBody',[
   'jquery',
-  '../utils'
+  '/static/utils'
 ], function ($, Utils) {
   function AttachBody (decorated, $element, options) {
     this.$dropdownParent = $(options.get('dropdownParent') || document.body);
@@ -4621,7 +4621,7 @@ S2.define('select2/dropdown/minimumResultsForSearch',[
 });
 
 S2.define('select2/dropdown/selectOnClose',[
-  '../utils'
+  '/static/utils'
 ], function (Utils) {
   function SelectOnClose () { }
 
@@ -6224,7 +6224,7 @@ S2.define('select2/compat/initSelection',[
 
 S2.define('select2/compat/inputData',[
   'jquery',
-  '../utils'
+  '/static/utils'
 ], function ($, Utils) {
   function InputData (decorated, $element, options) {
     this._currentData = [];

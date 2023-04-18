@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'Lotus Icon';
-	src:url('../../fonts/lotus/icomoon.eot@-kpo47j');
-	src:url('../../fonts/lotus/icomoon.eot@') format('embedded-opentype'),
-		url('../../fonts/lotus/icomoon.woff@-kpo47j') format('woff'),
-		url('../../fonts/lotus/icomoon.ttf@-kpo47j') format('truetype'),
-		url('../../fonts/lotus/icomoon.svg@-kpo47j') format('svg');
+	src:url('/static//static/fonts/lotus/icomoon.eot@-kpo47j');
+	src:url('/static//static/fonts/lotus/icomoon.eot@') format('embedded-opentype'),
+		url('/static//static/fonts/lotus/icomoon.woff@-kpo47j') format('woff'),
+		url('/static//static/fonts/lotus/icomoon.ttf@-kpo47j') format('truetype'),
+		url('/static//static/fonts/lotus/icomoon.svg@-kpo47j') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
