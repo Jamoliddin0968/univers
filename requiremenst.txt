@@ -1,0 +1,6 @@
+autopep8
+django-ckeditor
+django-imagekit
+django-jazzmin
+pillow
+pip-chill
