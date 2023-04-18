@@ -4,3 +4,4 @@ django-imagekit
 django-jazzmin
 pillow
 pip-chill
+gunicorn
