@@ -1094,10 +1094,10 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 .tp-simpleresponsive .button				{	padding:6px 13px 5px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; height:30px;
 												cursor:pointer;
 												color:#fff !important; text-shadow:0px 1px 1px rgba(0, 0, 0, 0.6) !important; font-size:15px; line-height:45px !important;
-												background:url(/static/images/gradient/g30.png) repeat-x top; font-family: arial, sans-serif; font-weight: bold; letter-spacing: -1px;
+												background:url(/static/css/images/gradient/g30.png) repeat-x top; font-family: arial, sans-serif; font-weight: bold; letter-spacing: -1px;
 											}
 
-.tp-simpleresponsive  .button.big			{	color:#fff; text-shadow:0px 1px 1px rgba(0, 0, 0, 0.6); font-weight:bold; padding:9px 20px; font-size:19px;  line-height:57px !important; background:url(/static/images/gradient/g40.png) repeat-x top}
+.tp-simpleresponsive  .button.big			{	color:#fff; text-shadow:0px 1px 1px rgba(0, 0, 0, 0.6); font-weight:bold; padding:9px 20px; font-size:19px;  line-height:57px !important; background:url(/static/css/images/gradient/g40.png) repeat-x top}
 
 
 .tp-simpleresponsive  .purchase:hover,
@@ -1234,9 +1234,9 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
         -o-user-select: none;
 	}
 
-.tp-bannershadow.tp-shadow1 {	background:url(/static/assets/shadow1.png) no-repeat; background-size:100% 100%; width:890px; height:60px; bottom:-60px}
-.tp-bannershadow.tp-shadow2 {	background:url(/static/assets/shadow2.png) no-repeat; background-size:100% 100%; width:890px; height:60px;bottom:-60px}
-.tp-bannershadow.tp-shadow3 {	background:url(/static/assets/shadow3.png) no-repeat; background-size:100% 100%; width:890px; height:60px;bottom:-60px}
+.tp-bannershadow.tp-shadow1 {	background:url(/static/css/assets/shadow1.png) no-repeat; background-size:100% 100%; width:890px; height:60px; bottom:-60px}
+.tp-bannershadow.tp-shadow2 {	background:url(/static/css/assets/shadow2.png) no-repeat; background-size:100% 100%; width:890px; height:60px;bottom:-60px}
+.tp-bannershadow.tp-shadow3 {	background:url(/static/css/assets/shadow3.png) no-repeat; background-size:100% 100%; width:890px; height:60px;bottom:-60px}
 
 
 /********************************
@@ -1360,10 +1360,10 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 	-	DOTTED OVERLAYS	-
 *********************************/
 .tp-dottedoverlay						{	background-repeat:repeat;width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:4}
-.tp-dottedoverlay.twoxtwo				{	background:url(/static/assets/gridtile.png)}
-.tp-dottedoverlay.twoxtwowhite			{	background:url(/static/assets/gridtile_white.png)}
-.tp-dottedoverlay.threexthree			{	background:url(/static/assets/gridtile_3x3.png)}
-.tp-dottedoverlay.threexthreewhite		{	background:url(/static/assets/gridtile_3x3_white.png)}
+.tp-dottedoverlay.twoxtwo				{	background:url(/static/css/assets/gridtile.png)}
+.tp-dottedoverlay.twoxtwowhite			{	background:url(/static/css/assets/gridtile_white.png)}
+.tp-dottedoverlay.threexthree			{	background:url(/static/css/assets/gridtile_3x3.png)}
+.tp-dottedoverlay.threexthreewhite		{	background:url(/static/css/assets/gridtile_3x3_white.png)}
 /********************************
 	-	DOTTED OVERLAYS ENDS	-
 *********************************/
@@ -1393,9 +1393,9 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 											}
 
 
-.tp-bullets.simplebullets.navbar						{ 	border:1px solid #666; border-bottom:1px solid #444; background:url(/static/assets/boxed_bgtile.png); height:40px; padding:0px 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px }
+.tp-bullets.simplebullets.navbar						{ 	border:1px solid #666; border-bottom:1px solid #444; background:url(/static/css/assets/boxed_bgtile.png); height:40px; padding:0px 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px }
 
-.tp-bullets.simplebullets.navbar-old					{ 	 background:url(/static/assets/navigdots_bgtile.png); height:35px; padding:0px 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px }
+.tp-bullets.simplebullets.navbar-old					{ 	 background:url(/static/css/assets/navigdots_bgtile.png); height:35px; padding:0px 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px }
 
 
 .tp-bullets.simplebullets.round .bullet					{	cursor:pointer; position:relative;	width:20px;	height:20px;  margin-right:0px; float:left; margin-top:0px; margin-left:3px}
@@ -1424,7 +1424,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 
 
 /** navbar NAVIGATION VERSION **/
-.tp-bullets.simplebullets.navbar-old .bullet			{	cursor:pointer; position:relative;	background:url(/static/assets/navigdots.png) no-Repeat bottom left;	width:15px;	height:15px;  margin-left:5px !important; margin-right:5px !important;float:left; margin-top:10px}
+.tp-bullets.simplebullets.navbar-old .bullet			{	cursor:pointer; position:relative;	background:url(/static/css/assets/navigdots.png) no-Repeat bottom left;	width:15px;	height:15px;  margin-left:5px !important; margin-right:5px !important;float:left; margin-top:10px}
 .tp-bullets.simplebullets.navbar-old .bullet.first		{	margin-left:0px !important}
 .tp-bullets.simplebullets.navbar-old .bullet.last		{	margin-right:0px !important}
 
@@ -1618,9 +1618,9 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 
 /*  CAPTION SLIDELINK   **/
 .caption.slidelink a div,
-.tp-caption.slidelink a div {	width:3000px; height:1500px;  background:url(/static/assets/coloredbg.png) repeat}
+.tp-caption.slidelink a div {	width:3000px; height:1500px;  background:url(/static/css/assets/coloredbg.png) repeat}
 
-.tp-caption.slidelink a span	{	background:url(/static/assets/coloredbg.png) repeat}
+.tp-caption.slidelink a span	{	background:url(/static/css/assets/coloredbg.png) repeat}
 
 
 
@@ -2126,7 +2126,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 .tp-loader.spinner0 {
   width: 40px;
   height: 40px;
-  background:url(/static/assets/loader.gif) no-repeat center center;
+  background:url(/static/css/assets/loader.gif) no-repeat center center;
   background-color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
@@ -2157,7 +2157,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 
 
 
-.tp-loader.spinner5 	{	background:url(/static/assets/loader.gif) no-repeat 10px 10px;
+.tp-loader.spinner5 	{	background:url(/static/css/assets/loader.gif) no-repeat 10px 10px;
 							background-color:#fff;
 							margin:-22px -22px;
 							width:44px;height:44px;
@@ -2324,7 +2324,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 
 
 
-.tp-transparentimg {	content:"url(/static/assets/transparent.png)"}
+.tp-transparentimg {	content:"url(../assets/transparent.png)"}
 .tp-3d				{	-webkit-transform-style: preserve-3d;
 						 -webkit-transform-origin: 50% 50%;
 					}
@@ -2341,11 +2341,11 @@ zoom: 1;
 
 @font-face {
   font-family: 'revicons';
-  src: url('/static//static/fonts/revicons/revicons.eot?5510888');
-  src: url('/static//static/fonts/revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
-       url('/static//static/fonts/revicons/revicons.woff?5510888') format('woff'),
-       url('/static//static/fonts/revicons/revicons.ttf?5510888') format('truetype'),
-       url('/static//static/fonts/revicons/revicons.svg?5510888#revicons') format('svg');
+  src: url('../../fonts/revicons/revicons.eot@5510888');
+  src: url('../../fonts/revicons/revicons.eot@5510888') format('embedded-opentype'),
+       url('../../fonts/revicons/revicons.woff@5510888') format('woff'),
+       url('../../fonts/revicons/revicons.ttf@5510888') format('truetype'),
+       url('../../fonts/revicons/revicons.svg@5510888') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -2355,7 +2355,7 @@ zoom: 1;
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'revicons';
-    src: url('/static/font/revicons.svg?5510888#revicons') format('svg');
+    src: url('../font/revicons.svg?5510888#revicons') format('svg');
   }
 }
 */

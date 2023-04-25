@@ -1,4 +1,5 @@
 {% load static %}
+{% load mptt_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="shortcut icon" href="images/favicon.png" %} />
+    <link rel="shortcut icon" href={% static "images/favicon.png" %} />
 
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Hind:400,300,500,600%7cMontserrat:400,700' rel='stylesheet'
@@ -37,9 +38,6 @@
 
 <body> <!--<![endif]-->
 
-
-
-    {% block content %}{% endblock content %}
 
     <!-- PAGE WRAP -->
     <div id="page-wrap">
@@ -82,68 +80,16 @@
                     <nav class="header_menu">
                         <ul class="menu">
                             <li class="current-menu-item"><a href={% url 'home' %}>Bosh sahifa</a></li>
-                            <li>
-                                <a href="#">Institut<span class="fa fa-caret-down"></span></a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="#">Tuzilma<span class="fa fa-caret-right"></span></a>
-                                        <ul class="sub-menu">
-                                            <li><a href={% url 'management' %}>Rahbariat</a></li>
-                                            <li><a href={% url 'fakultetlar' %}>Fakultetlar</a></li>
-                                            <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
-                                            <li><a href={% url 'departments' %}>Bo‘limlar</a></li>
-                                            <li><a href={% url 'center' %}>Markazlar</a></li>
-
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'about' %}>Institut haqida</a>
-                                    </li>
-                                    <li>
-                                        <a href={% url 'state_symbol' %}>Davlat ramzlari</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Talabalar<span class="fa fa-caret-down"></span></a>
-                                <ul class="sub-menu">
-                                    {% for page in student_pages %}
-                                    <li>
-                                        <a href={{page.get_absolute_url}}>{{page.title}}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                            <!-- <li><a href="#">Talabalar</a></li> -->
-                            <li>
-                                <a href="#">Malaka talablari <span class="fa fa-caret-down"></span></a>
-                                <ul class="sub-menu">
-                                    {% for object in skills_page %}
-                                        <li><a href={{object.get_absolute_url}}>{{object.title}}</a></li>
-                                    {% endfor %}
-                                    <li>
-                                        <a href="#">Moliyaviy faoliyat<span
-                                                class="fa fa-caret-right"></span></a>
-                                        <ul class="sub-menu">
-                                            <li><a href={% url 'management' %}>Xizmat safarlari</a></li>
-
-
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                            </li>
-                            <li>
-                                <a href="#">Ta’lim <span class="fa fa-caret-down"></span></a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Video darslar</a></li>
-
-                                </ul>
-                            </li>
-                            <li><a href="https://maqomfund.uz/" target="_blank">Maqom fondi</a></li>
-                            <li><a href="/static/kutubxona.uzmmsi.uz" target="_blank">Kutubxona</a></li>
-                            <li><a href="http://mt.uzmmsi.uz/" target="_blank">masofaviy ta'lim</a></li>
+                           <!-- ----------------------------------------------------------------------- -->
+                            {% recursetree categories %}
+                                {% if not node.is_leaf_node %}
+                                <li>
+                                    <a href="#">{{ node.title | title }} <span class="fa fa-caret-down"></span></a>
+                                    <ul class="sub-menu">{{ children }}</ul>
+                                </li>
+                                {% else %}<li><a href={{node.get_page_link}}>{{node.title | title}}</a></li>{% endif %} 
+                            {% endrecursetree %}
+                            
                         </ul>
                         <div class="shortcode-button">
                         </div>
@@ -163,7 +109,9 @@
 
         </header>
         <!-- END / HEADER -->
-
+        
+    {% block content %}
+    {% endblock content %}
         <!-- END / OUR BEST -->
         <br>
         <br>
@@ -230,11 +178,6 @@
                                 <h4 class="widget-title"><a href={% url 'sitemap' %}>Sayt Xaritasi</a></h4>
                                 <ul>
                                     <li><a href={% url 'home' %}>Bosh sahifa</a></li>
-                                    <li><a href={% url 'management' %}>Rahbariat</a></li>
-                                    <li><a href={% url 'fakultetlar' %}>Fakultetlar</a></li>
-                                    <li><a href={% url 'cafedra' %}>Kafedralar</a></li>
-                                    <li><a href={% url 'departments' %}>Bo`limlar</a></li>
-                                    <li><a href={% url 'center' %}>Markazlar</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -244,11 +187,6 @@
                                 <h4 class="widget-title">&nbsp;&nbsp;</h4>
                                 <ul>
                                     <li><a href="#">Institut tarixi</a></li>
-                                    <li><a href="#">Institut tashkiliy tuzulmasi</a>
-                                    <li><a href="#">Talabalar</a></li>
-                                    <li><a href="#">Malaka talablari</a></li>
-                                    <li><a href="#">Moliyaviy faoliyat</a></li>
-                                    <li><a href="https://maqomfund.uz/" target="_blank">Maqom fondi</a></li>
                                 </ul>
                             </div>
                         </div>

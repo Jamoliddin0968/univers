@@ -1,7 +1,0 @@
-from django.urls import path
-
-from .views import PageDetail
-
-urlpatterns = [
-    path('<int:pk>/',PageDetail.as_view(),name="page_detail"),
-]

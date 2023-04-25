@@ -26,32 +26,9 @@
                                 <!-- POST ITEM -->
                                 <article class="post">
 									<div class="entry-content">
-										<p>Institut</p>
-                                        
-                                    <li><a href={% url 'management' %}>Rahbariat</a></li><br>
-                                    <li><a href={% url 'fakultetlar' %}>Fakultetlar</a></li><br>
-                                    <li><a href={% url 'cafedra' %}>Kafedralar</a></li><br>
-                                    <li><a href={% url 'departments' %}>Bo`limlar</a></li><br>
-                                    <li><a href={% url 'center' %}>Markazlar</a></li><br>
-
-                                        <li><a href={% url 'about' %}>Institut haqida</a></li><br>
-                                        <li><a href={% url 'state_symbol' %}>Davlat ramzlari</a></li><br>
-										<p>Talabalar</p>
-                                        <li><a href={% url 'examschedule' %}>Imtihonlar jadvali</a></li><br>
-                                        <li><a href={% url 'bachelor' %}>Bakalavriyat</a></li><br>
-                                        <li><a href={% url 'lesson_table_bachelor' %}>Dars jadvali «Bakalavr»</a></li><br>
-                                        <li><a href={% url 'masters' %}>Magistratura</a></li><br>
-                                        <li><a href={% url 'lesson_table_masters' %}>Dars jadvali «Magistratura»</a></li><br>
-                                        <li><a href={% url 'correspondence_education' %}>Sirtqi ta’lim</a></li><br>
-										<p>Malaka talablari</p>
-                                        <li><a href={% url 'otm_rating' %}>OTM REYTING</a></li><br>
-                                        <li><a href={% url 'demand' %}>Talablar</a></li><br>
-                                        <p>Moliyaviy faoliyat</p>
-                                        <li><a href="{% url 'management' %}">Xizmat safarlari</a></li><br>
-										<p>Ta’lim</p>
-                                        <li><a href="https://maqomfund.uz/" target="_blank">Maqom fondi</a></li><br>
-                                        <li><a href="/static/kutubxona.uzmmsi.uz" target="_blank">Kutubxona</a></li><br>
-                                        <li><a href="http://mt.uzmmsi.uz/" target="_blank">Masofaviy ta'lim</a></li></li><br>
+										{% for obj in object_list %}
+                                        <li><a href={{obj.link}}>{{obj.title}}</a></li>
+                                        {% endfor %}
                                     </div>
 								</article>
                                 <!-- END / POST ITEM -->

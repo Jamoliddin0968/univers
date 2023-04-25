@@ -7,7 +7,7 @@
         init: function(ed, url) {
             var t = this;
             tb = ed.getParam("grappelli_adv_toolbar", "toolbar2");
-            documentstructure_css = url + "../../../themes/advanced/skins/grappelli/content_documentstructure_" + ed.settings.language + ".css";
+            documentstructure_css = url + "/static/css/lib/../themes/advanced/skins/grappelli/content_documentstructure_" + ed.settings.language + ".css";
             cookie_date = new Date();
             var year = cookie_date.getFullYear();
             cookie_date.setYear(year + 1);

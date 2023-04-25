@@ -1,6 +1,6 @@
 @bender-tags: exportpdf, feature, 77
 @bender-ui: collapsed
-@bender-include: /static//static/_helpers/tools.js
+@bender-include: /static/_helpers/tools.js
 @bender-ckeditor-plugins: wysiwygarea, toolbar, basicstyles, notification, format, easyimage
 
 Note: You need the Internet connection to run this test.
