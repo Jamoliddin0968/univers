@@ -31,13 +31,12 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 MY_APPS = [
-    "apps.institute",
+    "institute",
 ]
 LIBS = [
     "ckeditor",
     "ckeditor_uploader",
     "mptt",
-    "tinymce",
 ]
 INSTALLED_APPS = (
     [
@@ -78,7 +77,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "apps.institute.context_processor.get_student_pages",
+                "institute.context_processor.get_student_pages",
             ],
         },
     },
@@ -255,3 +254,4 @@ CKEDITOR_CONFIGS = {
 # CKEDITOR_IMAGE_BACKEND ="ckeditor_uploader.backends.PillowBackend"
 # default is 10 pixels
 MPTT_ADMIN_LEVEL_INDENT = 20
+AUTH_USER_MODEL = "institute.User"
