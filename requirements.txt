@@ -6,3 +6,4 @@ pillow
 pip-chill
 gunicorn
 django-grappelli
+filebrowser
