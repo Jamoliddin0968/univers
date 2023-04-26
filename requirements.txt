@@ -7,3 +7,4 @@ pip-chill
 gunicorn
 django-grappelli
 filebrowser
+django-mppt
