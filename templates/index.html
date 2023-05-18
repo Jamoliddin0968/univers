@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
@@ -54,14 +55,14 @@
 
                     <div class="text">
                         <h2><a href="index.html#"></a></h2>
-                        <span class="price"><B>O`ZBEK MILLIY MUSIQA VA SAN'AT INSTITUTI</B></span>
-                        <p align="justify"><b>Vazirlar Mahkamasi 2020-yil 2-sentabrdagi 536-sonli “Yunus Rajabiy
+                        <span class="price"><B>{% trans "O`ZBEK MILLIY MUSIQA VA SAN'AT INSTITUTI" %}</B></span>
+                        <p align="justify"><b>{% trans "Vazirlar Mahkamasi 2020-yil 2-sentabrdagi 536-sonli “Yunus Rajabiy
                                 nomidagi O‘zbek milliy musiqa san’ati instituti faoliyatini tashkil etish
                                 to‘g‘risida”gi qarori asosida O‘zbekiston davlat konservatoriyasi hamda O‘zbekiston
                                 davlat san’at va madaniyat institutining tegishli ta’lim yo‘nalishlari negizida
                                 Yunus Rajabiy nomidagi O‘zbek milliy musiqa san’ati instituti tashkil etildi. U
                                 maqom ijrochiligi, baxshichilik va katta ashula yo‘nalishlari bo‘yicha kadrlar
-                                tayyorlovchi tayanch oliy ta’lim muassasasi hisoblanadi.</b></p>
+                                tayyorlovchi tayanch oliy ta’lim muassasasi hisoblanadi." %}</b></p>
 
                     </div>
                 </div>
@@ -77,7 +78,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
                         <div class="ot-heading row-20 mb40 text-center">
-                            <h2>YANGILIKLAR</h2>
+                            <h2>{% trans "YANGILIKLAR" %}</h2>
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,7 @@
                                     {{object.date}}
                                 </p>
                                 <a class="title font-monserat f20 mb20 block bold upper" href={{object.get_absolute_url}}>{{object.title}}</a>
-                                <a class="more block f13" href={{object.get_absolute_url}}>[BATAFSIL]</a>
+                                <a class="more block f13" href={{object.get_absolute_url}}>{% trans "[BATAFSIL]" %}</a>
                             </div>
                         </div>
                     </div>
@@ -101,7 +102,7 @@
                     
                 </div>
                 <div class="text-center">
-                    <a href={% url 'posts' %} class="awe-btn awe-btn-default font-hind f12 bold btn-medium mt15">Barcha yangliklar</a>
+                    <a href={% url 'posts' %} class="awe-btn awe-btn-default font-hind f12 bold btn-medium mt15">{% trans "Barcha yangliklar" %}</a>
                 </div>
             </div>
         </div>
@@ -115,7 +116,7 @@
                 <div class="row">
                     <div class="col col-xs-12 col-lg-6 col-lg-offset-3">
                         <div class="ot-heading row-20 mb30 text-center">
-                            <h2>FAKULTETLAR</h2>
+                            <h2>{% trans "FAKULTETLAR" %}</h2>
                         </div>
                     </div>
                 </div>
@@ -127,9 +128,9 @@
                                 <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.title}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>{% trans "Batafsil" %}</a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +138,7 @@
                     <div class="row">
                         <div class="col col-xs-12 col-lg-6 col-lg-offset-3">
                             <div class="ot-heading row-20 mb30 text-center">
-                                <h2>KAFEDRALAR</h2>
+                                <h2>{% trans "KAFEDRALAR" %}</h2>
                             </div>
                         </div>
                     </div>
@@ -148,9 +149,9 @@
                                 <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.title}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>{% trans "Batafsil" %}</a>
                             </div>
                         </div>
                     </div>
@@ -179,7 +180,7 @@
                         <div class="col-xs-6 col-md-3">
                             <div class="statistics_item">
                                 <span class="count">564</span>
-                                <span>Talabalar soni</span>
+                                <span>{% trans "Talabalar soni" %}</span>
                             </div>
                         </div>
                         <!-- END ITEM -->
@@ -188,7 +189,7 @@
                         <div class="col-xs-6 col-md-3">
                             <div class="statistics_item">
                                 <span class="count">66</span>
-                                <span>Professor — o`qtuvchilar</span>
+                                <span>{% trans "Professor — o`qtuvchilar" %}</span>
                             </div>
                         </div>
                         <!-- END ITEM -->
@@ -197,7 +198,7 @@
                         <div class="col-xs-6 col-md-3">
                             <div class="statistics_item">
                                 <span class="count">3722</span>
-                                <span>Kutubxona resurslari</span>
+                                <span>{% trans "Kutubxona resurslari" %}</span>
                             </div>
                         </div>
                         <!-- END ITEM -->

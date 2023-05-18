@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 {% load static %}
 
 {% block content %}
@@ -9,7 +9,7 @@
             <div class="sub-banner">
                 <div class="container">
                     <div class="text text-center">
-                        <h2>YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI MARKAZLARI</h2>
+                        <h2>{% trans "YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI MARKAZLARI" %}</h2>
                         
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                                 <img class="img-full" src={{object.image_bg.url}} alt="">
                             </div>
                             <div class="info">
-                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.name}}</a>
+                                <a class="title bold f26 font-monserat upper" href={{object.get_absolute_url}}>{{object.title}}</a>
                                 <p class="sub font-monserat f12 f-600 upper mt10 mb20"></p>
-                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>Batafsil</a>
+                                <a class="awe-btn awe-btn-12 btn-medium font-hind f12 bold" href={{object.get_absolute_url}}>{% trans "Batafsil" %}</a>
                             </div>
                         </div>
                     </div>

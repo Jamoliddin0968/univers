@@ -3,14 +3,15 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.db import models
+from modeltranslation.admin import TranslationAdmin
 from mptt.admin import DraggableMPTTAdmin, MPTTModelAdmin
 
-from .models import Cafedra, Category, Center, Department, Fakultet, Page, Post, User
+from .models import Cafedra, Category, Center, Department, Fakultet, Page, Post
 
 admin.site.unregister((Group,))
 
 
-class SuperAdminModelAdmin(admin.ModelAdmin):
+class SuperAdminModelAdmin(TranslationAdmin):
     def has_module_permission(self, request):
         if request.user.is_authenticated and request.user.is_full_user:  # show for super user anyway
             return True
@@ -28,13 +29,6 @@ class PostAdmin(admin.ModelAdmin):
         return True
 
 
-admin.site.register(Post, PostAdmin)
-admin.site.register(Cafedra, SuperAdminModelAdmin)
-admin.site.register(Fakultet, SuperAdminModelAdmin)
-admin.site.register(Center, SuperAdminModelAdmin)
-admin.site.register(Department, SuperAdminModelAdmin)
-
-
 @admin.register(Page)
 class PageAdmin(SuperAdminModelAdmin):
     list_display = ("title", "link")
@@ -42,7 +36,7 @@ class PageAdmin(SuperAdminModelAdmin):
 
 
 @admin.register(Category)
-class CategoryAdmin(DraggableMPTTAdmin):
+class CategoryAdmin(DraggableMPTTAdmin, TranslationAdmin):
     expand_tree_by_default = True
 
     def has_module_permission(self, request):
@@ -50,3 +44,10 @@ class CategoryAdmin(DraggableMPTTAdmin):
             return True
 
         return False
+
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(Cafedra, SuperAdminModelAdmin)
+admin.site.register(Fakultet, SuperAdminModelAdmin)
+admin.site.register(Center, SuperAdminModelAdmin)
+admin.site.register(Department, SuperAdminModelAdmin)

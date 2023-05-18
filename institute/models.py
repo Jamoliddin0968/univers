@@ -2,19 +2,35 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from imagekit.models import ImageSpecField
 from mptt.models import MPTTModel, TreeForeignKey
 from pilkit.processors import *
+
+
+class AbstractModel(models.Model):
+    image = models.ImageField(verbose_name="Muqova rasm", upload_to="images/")
+    title = models.CharField(max_length=255)
+    content = RichTextUploadingField()
+
+    def __str__(self) -> str:
+        return self.title
+
+    class Meta:
+        abstract = True
 
 
 class User(AbstractUser):
     is_full_user = models.BooleanField(default=False)
 
 
-class Page(models.Model):
-    title = models.CharField(max_length=255)
+class Page(AbstractModel):
+    image = None
     slug = models.SlugField(("slug"))
-    content = RichTextUploadingField()
+
+    footer_visible = models.BooleanField(
+        _("Sayt haritasida korinishi"), default=False, help_text=_("Footer pageda ko'rinishi")
+    )
 
     class Meta:
         verbose_name = "Sahifa"
@@ -22,9 +38,6 @@ class Page(models.Model):
 
     def link(self):
         return reverse("page_detail", kwargs={"slug": self.slug})
-
-    def __str__(self):
-        return self.title
 
 
 class Category(MPTTModel):
@@ -67,17 +80,15 @@ class Category(MPTTModel):
     class Meta:
         verbose_name = "Menyu"
         verbose_name_plural = "Menyu"
-
+        # proxy = True
 
 # -------------------------------------------------
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=255)
-    image = models.ImageField(verbose_name="Muqova rasm", upload_to="images/")
+class Post(AbstractModel):
     date = models.DateField(("Vaqti"), auto_now_add=True)
-    content = RichTextUploadingField(null=True, blank=True)
-    image_bg = ImageSpecField(source="image", processors=[Resize(360, 260)], format="JPEG", options={"quality": 100})
+    image_bg = ImageSpecField(source="image", processors=[Resize(
+        360, 260)], format="JPEG", options={"quality": 100})
 
     class Meta:
         verbose_name = "Yangilik"
@@ -86,19 +97,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("post_detail", kwargs={"pk": self.pk})
 
-    def __str__(self) -> str:
-        return self.title
 
-
-class Cafedra(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(verbose_name="rasmi", upload_to="cafedra/")
-    content = RichTextUploadingField(null=True, blank=True)
-
-    def __str__(self) -> str:
-        return self.name
-
-    image_bg = ImageSpecField(source="image", processors=[Resize(770, 346)], format="JPEG", options={"quality": 100})
+class Cafedra(AbstractModel):
+    image_bg = ImageSpecField(source="image", processors=[Resize(
+        770, 346)], format="JPEG", options={"quality": 100})
 
     class Meta:
         verbose_name = "Kafedra"
@@ -108,15 +110,9 @@ class Cafedra(models.Model):
         return reverse("cafedra_detail", kwargs={"pk": self.pk})
 
 
-class Fakultet(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(verbose_name="rasmi", upload_to="fakultet/")
-    content = RichTextUploadingField(null=True, blank=True)
-
-    def __str__(self) -> str:
-        return self.name
-
-    image_bg = ImageSpecField(source="image", processors=[Resize(770, 346)], format="JPEG", options={"quality": 100})
+class Fakultet(AbstractModel):
+    image_bg = ImageSpecField(source="image", processors=[Resize(
+        770, 346)], format="JPEG", options={"quality": 100})
 
     class Meta:
         verbose_name = "Fakultet"
@@ -126,15 +122,9 @@ class Fakultet(models.Model):
         return reverse("fakultet_detail", kwargs={"pk": self.pk})
 
 
-class Center(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(verbose_name="rasmi", upload_to="center/")
-    content = RichTextUploadingField(null=True, blank=True)
-
-    def __str__(self) -> str:
-        return self.name
-
-    image_bg = ImageSpecField(source="image", processors=[Resize(770, 346)], format="JPEG", options={"quality": 100})
+class Center(AbstractModel):
+    image_bg = ImageSpecField(source="image", processors=[Resize(
+        770, 346)], format="JPEG", options={"quality": 100})
 
     class Meta:
         verbose_name = "Markaz"
@@ -144,15 +134,9 @@ class Center(models.Model):
         return reverse("center_detail", kwargs={"pk": self.pk})
 
 
-class Department(models.Model):
-    name = models.CharField(max_length=255)
-    image = models.ImageField(verbose_name="rasmi", upload_to="department/")
-    content = RichTextUploadingField(null=True, blank=True)
-
-    def __str__(self) -> str:
-        return self.name
-
-    image_bg = ImageSpecField(source="image", processors=[Resize(770, 346)], format="JPEG", options={"quality": 100})
+class Department(AbstractModel):
+    image_bg = ImageSpecField(source="image", processors=[Resize(
+        770, 346)], format="JPEG", options={"quality": 100})
 
     class Meta:
         verbose_name = "Bo'lim"

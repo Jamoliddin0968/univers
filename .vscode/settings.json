@@ -1,6 +1,6 @@
 {
     "editor.formatOnSave": true,
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "none",
     "python.formatting.blackArgs": [
         "--line-length=120"
     ],
@@ -15,6 +15,9 @@
     ],
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
     },
     // "python.linting.mypyEnabled": true
 }

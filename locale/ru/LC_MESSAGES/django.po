@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-02 21:18+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\settings.py:149
+msgid "Uzbek"
+msgstr ""
+
+#: .\config\settings.py:149
+msgid "Russian"
+msgstr ""
+
+#: .\config\settings.py:149
+msgid "English"
+msgstr ""
+
+#: .\institute\models.py:32
+msgid "Sayt haritasida korinishi"
+msgstr ""
+
+#: .\institute\models.py:32
+msgid "Footer pageda ko'rinishi"
+msgstr ""
+
+#: .\institute\templates\institute\bolimlar.html:10
+msgid "YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI BO'LIMLAR"
+msgstr ""
+"ОТДЕЛЕНИЯ УЗБЕКСКОГО НАЦИОНАЛЬНОГО ИНСТИТУТА МУЗЫКАЛЬНОГО ИСКУССТВА ИМЕНИ "
+"ЮНУСА РАДЖАБИ"
+
+#: .\institute\templates\institute\bolimlar.html:36
+#: .\institute\templates\institute\fakultetlar.html:36
+#: .\institute\templates\institute\kafedralar.html:41
+#: .\institute\templates\institute\markazlar.html:38 .\templates\index.html:133
+#: .\templates\index.html:154
+msgid "Batafsil"
+msgstr "Подробнее"
+
+#: .\institute\templates\institute\fakultetlar.html:10
+msgid ""
+"YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI FAKULTETLAR"
+msgstr ""
+"УЗБЕКСКИЙ НАЦИОНАЛЬНЫЙ ИНСТИТУТ МУЗЫКАЛЬНОГО ИСКУССТВА ИМЕНИ ЮНУСА РАДЖАБИ "
+"ФАКУЛЬТЕТ"
+
+#: .\institute\templates\institute\kafedralar.html:14
+msgid ""
+"YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI KAFEDRALAR"
+msgstr ""
+"ОТДЕЛЕНИЯ УЗБЕКСКОГО НАЦИОНАЛЬНОГО ИНСТИТУТА МУЗЫКАЛЬНОГО ИСКУССТВА ИМЕНИ "
+"ЮНУСА РАДЖАБИ"
+
+#: .\institute\templates\institute\markazlar.html:12
+msgid ""
+"YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI MARKAZLARI"
+msgstr ""
+"ЦЕНТРЫ УЗБЕКСКОГО НАЦИОНАЛЬНОГО ИНСТИТУТА МУЗЫКАЛЬНОГО ИСКУССТВА ИМЕНИ ЮНУСА "
+"РАДЖАБИ"
+
+#: .\institute\templates\institute\yangiliklar.html:10
+msgid "BARCHA YANGILIKLAR"
+msgstr "ВСЕ НОВОСТИ"
+
+#: .\templates\base.html:10
+msgid "YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI"
+msgstr ""
+"УЗБЕКСКИЙ НАЦИОНАЛЬНЫЙ ИНСТИТУТ МУЗЫКАЛЬНОГО ИСКУССТВА ИМЕНИ ЮНУСА РАДЖАБИ"
+
+#: .\templates\base.html:84
+msgid "Bosh sahifa"
+msgstr "Домашняя страница"
+
+#: .\templates\base.html:131
+msgid "Obuna bo`ling"
+msgstr "Подписаться"
+
+#: .\templates\index.html:58
+msgid "O`ZBEK MILLIY MUSIQA VA SAN'AT INSTITUTI"
+msgstr "УЗБЕКСКИЙ НАЦИОНАЛЬНЫЙ ИНСТИТУТ МУЗЫКИ И ИСКУССТВА"
+
+#: .\templates\index.html:81
+msgid "YANGILIKLAR"
+msgstr "НОВОСТИ"
+
+#: .\templates\index.html:97
+msgid "[BATAFSIL]"
+msgstr "[ДЕТАЛЬ]"
+
+#: .\templates\index.html:105
+msgid "Barcha yangliklar"
+msgstr "Все новости"
+
+#: .\templates\index.html:119
+msgid "FAKULTETLAR"
+msgstr "ФАКУЛЬТЕТЫ"
+
+#: .\templates\index.html:141
+msgid "KAFEDRALAR"
+msgstr "ОТДЕЛЫ"
+
+#: .\templates\index.html:183
+msgid "Talabalar soni"
+msgstr "Количество студентов"
+
+#: .\templates\index.html:192
+msgid "Professor — o`qtuvchilar"
+msgstr "Профессор - учителя"
+
+#: .\templates\index.html:201
+msgid "Kutubxona resurslari"
+msgstr "Ресурсы библиотеки"

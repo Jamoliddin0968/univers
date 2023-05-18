@@ -41,7 +41,7 @@ LIBS = [
 INSTALLED_APPS = (
     [
         "grappelli",
-        "filebrowser",
+        "modeltranslation",
         "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",
@@ -59,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -119,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "uz-uz"
+LANGUAGE_CODE = "uz-ru"
 
 TIME_ZONE = "Asia/Tashkent"
 
@@ -142,6 +143,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+from django.utils.translation import gettext_lazy as _
+
+LANGUAGES = (("uz", _("Uzbek")), ("ru", _("Russian")), ("en", _("English")))
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
+MODELTRANSLATION_LANGUAGES = ("uz", "ru", "en")
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_CONFIGS = {

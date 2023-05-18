@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 {% load mptt_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <!-- TITLE -->
-    <title>YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI</title>
+    <title>{% trans "YUNUS RAJABIY NOMIDAGI O‘ZBEK MILLIY MUSIQA SAN’ATI INSTITUTI" %}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -55,15 +56,16 @@
                     <div class="header_right float-right">
 
                         <span class="login-register">
-                            <a href="/static/login.html">Login</a>
-                            <a href="/static/register.html">register</a>
+                            <a href="#">login</a>
+                            <a href="#">Register</a>
                         </span>
                         <div class="dropdown language">
                             <span>O'zbekcha</span>
 
                             <ul>
-                                <li><a href="#">Русский</a></li>
-                                <li><a href="#">English</a></li>
+                                <li><a href="/uz{{request.get_full_path|slice:'3:'}}">O'zbekcha</a></li>
+                                <li><a href="/ru{{request.get_full_path|slice:'3:'}}">Русский</a></li>
+                                <li><a href="/en{{request.get_full_path|slice:'3:'}}">English</a></li>
                             </ul>
                         </div>
 
@@ -79,7 +81,7 @@
                     <!-- HEADER MENU -->
                     <nav class="header_menu">
                         <ul class="menu">
-                            <li class="current-menu-item"><a href={% url 'home' %}>Bosh sahifa</a></li>
+                            <li class="current-menu-item"><a href={% url 'home' %}>{% trans "Bosh sahifa" %}</a></li>
                            <!-- ----------------------------------------------------------------------- -->
                             {% recursetree categories %}
                                 {% if not node.is_leaf_node %}
@@ -126,7 +128,7 @@
                         <!-- WIDGET MAILCHIMP -->
                         <div class="col-lg-9">
                             <div class="mailchimp">
-                                <h4>obuna bo`ling</h4>
+                                <h4>{% trans "Obuna bo`ling" %}</h4>
 
                             </div>
                         </div>
